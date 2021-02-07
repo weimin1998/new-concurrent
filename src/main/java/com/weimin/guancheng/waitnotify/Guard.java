@@ -3,18 +3,19 @@ package com.weimin.guancheng.waitnotify;
 import com.weimin.util.MyUtil;
 
 /**
+ * 同步设计模式
  * 保护性暂停
  */
 public class Guard {
     public static void main(String[] args) {
         GuardedObject<Integer> guardedObject = new GuardedObject<>();
         new Thread(()->{
-            Integer integer = guardedObject.get();
+            Integer integer = guardedObject.get(2000);
             MyUtil.print("获取到了："+integer);
         }).start();
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
