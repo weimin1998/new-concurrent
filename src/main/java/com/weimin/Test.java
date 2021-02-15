@@ -2,6 +2,8 @@ package com.weimin;
 
 import com.weimin.util.MyUtil;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
 public class Test {
@@ -13,5 +15,6 @@ public class Test {
                 e.printStackTrace();
             }
         }
+
     }
 }
