@@ -11,14 +11,18 @@ public class ScheduledExecutorServiceDemo {
         // 类似固定大小的线程池
         ScheduledExecutorService pool = Executors.newScheduledThreadPool(1);
 
-        /*pool.schedule(()->{
+        pool.schedule(()->{
             MyUtil.print("任务1");
-            int a = 10/0;
+            try {
+                int a = 10/0;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         },1, TimeUnit.SECONDS);
 
         pool.schedule(()->{
             MyUtil.print("任务2");
-        },1, TimeUnit.SECONDS);*/
+        },1, TimeUnit.SECONDS);
 
         // 以固定的速率执行任务
         // 一秒以后 每间隔一秒 就执行一遍
@@ -32,14 +36,14 @@ public class ScheduledExecutorServiceDemo {
             }
         },1,1,TimeUnit.SECONDS);*/
 
-        pool.scheduleWithFixedDelay(()->{
+        /*pool.scheduleWithFixedDelay(()->{
             MyUtil.print("反复任务");
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        },1,1,TimeUnit.SECONDS);
+        },1,1,TimeUnit.SECONDS);*/
 
     }
 }

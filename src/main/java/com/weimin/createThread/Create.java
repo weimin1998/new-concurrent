@@ -13,6 +13,7 @@ public class Create {
         // callable
         FutureTask<Integer> integerFutureTask = new FutureTask<>(() -> {
             Thread.sleep(1000);
+            int a = 10/0;
             return 100;
         });
 
